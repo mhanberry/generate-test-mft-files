@@ -1,4 +1,4 @@
-# Generate Test Files
+# Generate Test MFT Files
 
 This project is used to generate test files to simulate actual customer files in an MFT pipeline.
 
