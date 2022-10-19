@@ -1,5 +1,5 @@
 from faker import Faker
-from lib.util import print_progress
+from lib.util import print_progress, bytes_to_readable
 
 def gen_files(
     sizes_mb: int = [100, 3700, 5000],
@@ -42,7 +42,8 @@ def gen_files(
 
     # Create output files of each size
     for size in sizes_mb:
-        file_name = f'{output_dir}/ascii_{size}'
+        bytes_string = bytes_to_readable(size * 10**6)
+        file_name = f'{output_dir}/ascii_{bytes_to_readable(size * 10**6)}'
         output_file = open(file_name, 'w')
         line_size = len(lines[0])
         size_in_bytes = size * 1000000

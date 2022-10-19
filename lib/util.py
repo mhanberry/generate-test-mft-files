@@ -19,3 +19,17 @@ def print_progress(
     
     percent = (current * 10**(2 + precision) // target) / 10**precision
     print(f'\r{message} {percent}%', end="")
+
+def bytes_to_readable(bytes: int) -> str:
+    '''
+        Convert bytes to a human-readable string
+    '''
+    
+    if(bytes >= 10**12):
+        return f'{(bytes * 10 // 10**12) / 10}tb'
+    if(bytes >= 10**9):
+        return f'{(bytes * 10 // 10**9) / 10}gb'
+    if(bytes >= 10**6):
+        return f'{(bytes * 10 // 10**6) / 10}mb'
+    if(bytes >= 10**3):
+        return f'{(bytes * 10 // 10**3) / 10}kb'
