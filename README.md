@@ -12,7 +12,7 @@ pip install -r requirements.txt
 
 ## Generating Files
 
-Run the following command to generate 3 files for each available file type:
+Run the following command to generate 3 files of varying sizes for each available file type:
 
 ```
 python main.py
