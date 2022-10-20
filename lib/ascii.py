@@ -1,3 +1,4 @@
+import random
 from faker import Faker
 from lib.util import print_progress, bytes_to_readable
 
@@ -34,7 +35,7 @@ def gen_files(
             exp_date = faker.credit_card_expire()
             name = faker.name()
             
-            lines.append('{number},{exp_date},{name}\n')
+            lines.append(f'{number},{exp_date},{name}\n')
 
             # Print progress
             print_progress('    Generating data...', len(lines), total_lines)
@@ -45,15 +46,16 @@ def gen_files(
         bytes_string = bytes_to_readable(size * 10**6)
         file_name = f'{output_dir}/ascii_{bytes_to_readable(size * 10**6)}'
         output_file = open(file_name, 'w')
-        line_size = len(lines[0])
         size_in_bytes = size * 1000000
         current_size = 0
         
         # Keep writing lines until the desired size is reached
         while(current_size < size_in_bytes):
+            random.shuffle(lines)
+            
             for line in lines:
                 output_file.write(line)
-                current_size += line_size
+                current_size += len(line)
         
                 # Print progress
                 print_progress(f'    {file_name}...', current_size, size_in_bytes)
