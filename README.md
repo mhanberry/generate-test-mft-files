@@ -18,10 +18,11 @@ Run the following command to generate 3 files of varying sizes for each availabl
 python main.py
 ```
 
-The generated files will be in the `output` directory
+The generated files will be in the `output` directory, and they will be of sizes 100MB, 3.7GB, and 5GB
 
 ## Supported File Types
 
 As of now, the following file types can be generated:
    
 - ASCII
+- EBCDIC

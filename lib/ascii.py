@@ -20,6 +20,8 @@ def gen_files(
             The card types to generate records for
         region: str
             The geographic region to simulate records for
+        output_dir: str
+            The directory in which the generated files will be stored
         
         return: None
     '''

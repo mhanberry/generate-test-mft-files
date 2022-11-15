@@ -1,9 +1,11 @@
-from lib import ascii
+from lib import ascii, ebcdic
 
 def main():
     print('Generating ascii files...')
-
     ascii.gen_files()
+
+    print('Converting ascii files to ebcdic...')
+    ebcdic.conv_ascii_files()
 
     print('Done.')
     print('The generated files can be found in the `output` directory')
